@@ -1,0 +1,66 @@
+'use server'
+
+import { NextResponse, NextRequest } from 'next/server'
+import mysql from  'mysql2/promise';
+import { GetDBSettings, IDBSettings } from '@/app/sharedCode/common'
+let connectionParams = GetDBSettings();
+
+export async function getAllCards() {
+	try{
+		const connection = await mysql.createConnection(connectionParams);
+
+		let get_exp_query = '';
+
+		//get_exp_query = 'SELECT * FROM login';
+		
+		get_exp_query = `SELECT * FROM cards`;
+
+		let values: any = [];
+
+		const [results, fields] = await connection.execute(get_exp_query, values);
+
+		connection.end();
+
+		return JSON.parse(JSON.stringify(results));
+	}
+	catch(err: any){
+		console.log("error: ", err.message);
+
+		const response = {
+			error: err.message,
+			returnedStatus: 200
+		}
+
+		return NextResponse.json(response, {status: 200})
+	}
+}
+
+export async function getCard(props: any){
+	try{
+		const connection = await mysql.createConnection(connectionParams);
+
+		let get_exp_query = '';
+
+		//get_exp_query = 'SELECT * FROM login';
+
+		get_exp_query = `SELECT * FROM cards where CardID = "${props}"`;
+
+		let values: any = [];
+
+		const [results, fields] = await connection.execute(get_exp_query, values);
+
+		connection.end();
+
+		return JSON.parse(JSON.stringify(results));
+	}
+	catch(err: any){
+		console.log("error: ", err.message);
+
+		const response = {
+			error: err.message,
+			returnedStatus: 200
+		}
+
+		return NextResponse.json(response, {status: 200})
+	}
+}

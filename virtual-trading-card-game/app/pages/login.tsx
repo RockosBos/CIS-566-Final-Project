@@ -13,8 +13,8 @@ const login = (props: any) => {
 	return(
 		<div className="">
 			<main className="">
-				{showSignup && <SignupComponent />}
-				{showLogin && <LoginComponent setUserId={props.setUserId}/>}
+				{showSignup && <SignupComponent setShowSignup={setShowSignup} setShowLogin={setShowLogin} />}
+				{showLogin && <LoginComponent setUserId={props.setUserId} setShowLogin={setShowLogin} setShowSignup={setShowSignup} setHomePage={props.setHomePage}/>}
 			</main>
 		</div>
 	)

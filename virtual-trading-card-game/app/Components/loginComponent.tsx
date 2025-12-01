@@ -11,6 +11,8 @@ export default function LoginComponent(props: any) {
 				LoginUser({username: username, password: password}).then((res: any) => {
 					if(res.length){
 						props.setUserId(res[0].userID);
+						props.setShowLogin(false);
+						props.setHomePage(true);
 					}
 					else{
 	

@@ -11,7 +11,6 @@ import { getUserDeck } from "./api/deck";
 
 export default function page() {
 
-	const [loginPage, setLoginPage] = useState(true);
 	const [homePage, setHomePage] = useState(false);
 	const [userID, setUserId] = useState("-1");
 	const [cards, setCards] = useState([]);
@@ -52,7 +51,7 @@ export default function page() {
 		
 	}, [userID]);
 
-		useEffect(() => {
+	useEffect(() => {
 		const getUserCard = async () => {
 			getCard(keyString).then((res:any) => {
 				setCards(res);
@@ -68,7 +67,7 @@ export default function page() {
   return (
     <div className="">
 		<p>User ID: {userID}</p>
-        {loginPage && <Login setUserId = {setUserId} />}
+        <Login setUserId = {setUserId} setHomePage={setHomePage}/>
         {homePage && <Home />}
 		{cards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength}/>)}
     </div>

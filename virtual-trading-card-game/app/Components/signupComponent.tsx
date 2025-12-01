@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {LoginUser, CreateUser, getNumberofUsers} from '../api/login'
 
-export default function SignupComponent() {
+export default function SignupComponent(props: any) {
 
 		const [username, setUsername] = useState('');
 		const [password, setPassword] = useState('');
@@ -15,6 +15,8 @@ export default function SignupComponent() {
 						setUserAcctNum(res.length)
 						CreateUser({username: username, password: password, acctNum: res.length}).then((res: any) => {
 							if(res.length){
+								props.setShowSignup(false);
+								props.setShowLogin(true);
 							}
 							else{
 			

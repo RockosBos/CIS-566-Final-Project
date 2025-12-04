@@ -12,11 +12,9 @@ const login = (props: any) => {
 	const [showSignup, setShowSignup] = useState(false);
 
 	return(
-		<div className="">
-			<main className="Login">
-				{showSignup && <SignupComponent setShowSignup={setShowSignup} setShowLogin={setShowLogin} />}
-				{showLogin && <LoginComponent setUserId={props.setUserId} setShowLogin={setShowLogin} setShowSignup={setShowSignup} setHomePage={props.setHomePage} setUserName={props.setUserName}/>}
-			</main>
+		<div className="Login">
+			{showSignup && <SignupComponent setUserId={props.setUserId} setShowSignup={setShowSignup} setShowLogin={setShowLogin} setUserName={props.setUserName} setHomePage={props.setHomePage} />}
+			{showLogin && <LoginComponent setUserId={props.setUserId} setShowLogin={setShowLogin} setShowSignup={setShowSignup} setHomePage={props.setHomePage} setUserName={props.setUserName}/>}
 		</div>
 	)
 }

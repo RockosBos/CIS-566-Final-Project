@@ -1,0 +1,10 @@
+.homeDiv{
+	justify-content: center;
+}
+.homeComponents{
+	justify-content: center;
+	background-color: lightblue;
+	border: 2px solid blue;
+	border-radius: 20px;
+	padding-bottom: 10%;
+}

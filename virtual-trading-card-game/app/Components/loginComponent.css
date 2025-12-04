@@ -1,0 +1,14 @@
+.buttons{
+	padding-top: 2.5%;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 25%;
+	padding-left: 25%;
+}
+.form{
+	width: 30%;
+	background-color: lightblue;
+	border: 2px solid blue;
+	border-radius: 20px;
+	justify-content: center;
+}

@@ -1,0 +1,11 @@
+{
+	"css.autoValidation": "Always",
+	"css.styleSheets": [
+
+	],
+	"files.associations": {
+  		"*.css": "css",
+  		"css": "css"
+	}
+
+}

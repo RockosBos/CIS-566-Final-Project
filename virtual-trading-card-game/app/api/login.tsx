@@ -34,7 +34,7 @@ export async function CreateUser(req: any){
 			returnedStatus: 200
 		}
 
-		return NextResponse.json(response, {status: 200})
+		return false;
 	}
 }
 
@@ -64,7 +64,7 @@ export async function LoginUser(req: any) {
 			returnedStatus: 200
 		}
 
-		return NextResponse.json(response, {status: 200})
+		return false;
 	}
 }
 

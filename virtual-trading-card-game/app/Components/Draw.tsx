@@ -2,7 +2,8 @@ import { useState } from "react";
 import { getAllCards } from "../api/cards";
 import Card from "./card";
 import { addCardToDeck } from "../api/deck";
-import "./Draw.css"
+import "./Draw.css";
+import '../Components/button.css';
 
 export default function Draw(props:any) {
 
@@ -101,7 +102,7 @@ export default function Draw(props:any) {
 	<>
 		<div>
 			<p>Welcome to the draw page</p>
-			<button onClick={DrawCards}>Draw</button>
+			<button className='button' onClick={DrawCards}>Draw</button>
 			<div className="Cards">
 				{pulledCards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength}/>)}
 			</div>

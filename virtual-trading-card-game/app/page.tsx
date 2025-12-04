@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import {getCard} from "./api/cards";
 import { getUserDeck } from "./api/deck";
 import './pages/page.css'
+import Header from "./Components/Header";
 
 export default function page() {
 
@@ -29,7 +30,6 @@ export default function page() {
 				res.forEach((e: any) => {
 					whereString = "";
 					Object.entries(e).map(([key, value]) => {
-						console.log(key + " | " + value);
 						if(value != "0"){
 							val = key as string;
 							val = val.toString();
@@ -68,7 +68,8 @@ export default function page() {
 
   return (
     <div className="page">
-		<p>Welcome {userName}</p>
+		<Header />
+		{userName && <p>Welcome {userName}</p>}
         <Login setUserId = {setUserId} setHomePage={setHomePage} setUserName={setUserName}/>
         {homePage && <Home userID = {userID}/>}
 		{/* {cards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength}/>)} */}

@@ -38,8 +38,9 @@ export default function SignupComponent(props: any) {
 	
 		}
 	
-		const cancel = async (e: any) => {
-			
+		const setLogin = async (e: any) => {
+			props.setShowSignup(false);
+			props.setShowLogin(true);
 		}	
 
 	return(
@@ -52,7 +53,7 @@ export default function SignupComponent(props: any) {
 					<input type='password' className='password' id='password' />
 					<label htmlFor='submit'> </label>
 					<input type='submit' id='submit'></input>
-					<button onClick={cancel}>Cancel</button>
+					<button onClick={setLogin}>Return to Login</button>
 				</form>
 			</div>
 		</>

@@ -6,13 +6,15 @@ import Login from "./pages/login";
 import Home from "./pages/home";
 import Card from "./Components/card";
 import { useEffect, useState } from "react";
-import {getCard} from "../app/api/cards";
+import {getCard} from "./api/cards";
 import { getUserDeck } from "./api/deck";
+import './pages/page.css'
 
 export default function page() {
 
 	const [homePage, setHomePage] = useState(false);
 	const [userID, setUserId] = useState("-1");
+	const [userName, setUserName] = useState("");
 	const [cards, setCards] = useState([]);
 	const [keyString, setKeyString] = useState("");
 	const [startup, setStartup] = useState(true);
@@ -65,11 +67,11 @@ export default function page() {
 	}, [keyString])
 
   return (
-    <div className="">
-		<p>User ID: {userID}</p>
-        <Login setUserId = {setUserId} setHomePage={setHomePage}/>
-        {homePage && <Home />}
-		{cards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength}/>)}
+    <div className="page">
+		<p>Welcome {userName}</p>
+        <Login setUserId = {setUserId} setHomePage={setHomePage} setUserName={setUserName}/>
+        {homePage && <Home userID = {userID}/>}
+		{/* {cards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength}/>)} */}
     </div>
   );
 }

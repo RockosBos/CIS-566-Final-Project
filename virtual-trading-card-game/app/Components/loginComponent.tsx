@@ -27,26 +27,29 @@ export default function LoginComponent(props: any) {
 			e.preventDefault();
 	
 			const target = e.target;
+			props.setUserName(target.username.value)
 			setUsername(target.username.value);
 			setPassword(target.password.value);
 	
 		}
 	
-		const cancel = async (e: any) => {
-			
+		const createAccount = async (e: any) => {
+			props.setShowSignup(true);
+			props.setShowLogin(false);
 		}	
 
 	return(
 		<>
 			<div className="login">
-				<form className='loginnForm' onSubmit={onSubmit}>
+				<form className='loginForm' onSubmit={onSubmit}>
 					<label htmlFor="username">Username:</label>
 					<input type='text' className='username' id='username' />
 					<label htmlFor="password">Password:</label>
 					<input type='password' className='password' id='password' />
 					<label htmlFor='submit'> </label>
 					<input type='submit' id='submit'></input>
-					<button onClick={cancel}>Cancel</button>
+					<button onClick={createAccount}>Create An Account</button>
+
 				</form>
 			</div>
 		</>

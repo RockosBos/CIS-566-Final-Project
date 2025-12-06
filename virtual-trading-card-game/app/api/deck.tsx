@@ -13,7 +13,7 @@ export async function getUserDeck(props : any) {
 
 		//get_exp_query = 'SELECT * FROM login';
 		
-		get_exp_query = `SELECT * FROM deck WHERE deckID = '${props.userID}'`;
+		get_exp_query = `SELECT * FROM deck WHERE deckID = '${props}'`;
 
 		let values: any = [];
 

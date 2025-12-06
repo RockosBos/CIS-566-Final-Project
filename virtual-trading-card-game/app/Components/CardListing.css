@@ -1,0 +1,22 @@
+.cardListing{
+	display: flex;
+	flex-direction: row;
+	font-size: large;
+	background-color: lightgreen;
+	border: 2px solid green;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.redProp{
+	color: red;
+	margin-left: 5%;
+}
+.blueProp{
+	color: blue;
+	margin-left: 5%;
+}
+.greenProp{
+	color: green;
+	margin-left: 5%;
+}

@@ -2,15 +2,14 @@ import React, {useEffect, useState} from "react";
 import { getAllCards } from "../api/cards";
 import { getUserDeck } from "../api/deck";
 import Card from "./card";
-import CardWithQuantity from "./CardWithQuantity";
+import "./Deck.css"
 
 export default function Deck(props:any) {
 
 	const [deckRes, setDeckRes] = useState([]);
 	const [cards, setCards] = useState([]);
-	const [q, setQ]  = useState<string[]>([])
+	const [q, setQ]  = useState<string[]>([]);
 	let quantity: string[] = [];
-	let firstRun = true;
 
 	useEffect(() => {
 		const getDeck = async () => {
@@ -35,14 +34,15 @@ export default function Deck(props:any) {
   return (
 	<>
 		<div>
-			<p>Welcome to the deck page</p>
-			<p>{cards.map((i: any) => 
-				<>
-					<Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength} />
-					<h1>x{q[i.CardID]}</h1>
-				</>
-			)}
-			</p>
+			<p className="deckTitle">Welcome to the deck page</p>
+			<div className="container">
+				<p>{cards.map((i: any) => 
+					<div className="deckCard">
+						{(q[i.CardID] != "0") && <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength} />}
+						{(q[i.CardID] != "0") &&<h1>x{q[i.CardID]}</h1>}
+					</div>
+				)}</p>
+			</div>
 		</div>
 	</>
   );

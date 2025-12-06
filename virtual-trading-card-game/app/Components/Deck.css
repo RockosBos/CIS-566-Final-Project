@@ -1,0 +1,14 @@
+.deckCard{
+	float: left;
+	flex-direction: column;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.container{
+	float: left;
+}
+
+.deckTitle{
+	font-size: xx-large;
+}

@@ -1,6 +1,6 @@
 .card{
 	background-color: white;
-	width: 17%;
+	width: 325px;
 	height: 35%;
 	border: solid black 2px;
 	border-radius: 5px;
@@ -8,7 +8,7 @@
 }
 .GoldCard{
 	background-color: gold;
-	width: 17%;
+	width: 325px;
 	height: 35%;
 	border: solid black 2px;
 	border-radius: 5px;
@@ -16,7 +16,7 @@
 }
 .SilverCard{
 	background-color: purple;
-	width: 17%;
+	width: 325px;
 	height: 35%;
 	border: solid black 2px;
 	border-radius: 5px;
@@ -24,7 +24,7 @@
 }
 .BronzeCard{
 	background-color: coral;
-	width: 17%;
+	width: 325px;
 	height: 35%;
 	border: solid black 2px;
 	border-radius: 5px;

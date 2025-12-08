@@ -22,6 +22,7 @@ export default function GameSelectCards(props:any) {
 				setQ(quantity);
 				getAllCards().then((res:any) => {
 					setCards(res);
+					props.setSelectedCards(cards);
 				});
 			});
 		}

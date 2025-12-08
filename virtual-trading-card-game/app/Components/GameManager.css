@@ -1,0 +1,24 @@
+.opponent{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.player{
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.GameScreen{
+	display: flex;
+	flex-direction: column;
+}
+
+.playerCard{
+	height: 100%;
+}
+
+.opponentCard{
+	height: 100%;
+}

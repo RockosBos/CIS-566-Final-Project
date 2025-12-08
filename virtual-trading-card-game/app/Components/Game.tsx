@@ -11,7 +11,6 @@ export default function Game(props:any) {
 
 	useEffect(() => {
 		const checkGameTransition = () => {
-			console.log(selectedCards.length);
 			if(selectedCards.length > 2){
 				setShowCardSelect(false);
 				setShowGame(true);
@@ -23,9 +22,8 @@ export default function Game(props:any) {
   return (
 	<>
 		<div className="game">
-			<p>{selectedCards}</p>
 			{showCardSelect && <GameSelectCards userID = {props.userID} setSelectedCards={setSelectedCards} selectedCards={selectedCards}/>}
-			{showGame && <GameManager />}
+			{showGame && <GameManager selectedCards={selectedCards}/> }
 		</div>
 	</>
   );

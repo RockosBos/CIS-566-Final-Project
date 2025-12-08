@@ -38,7 +38,7 @@ export default function Deck(props:any) {
 			<div className="container">
 				<p>{cards.map((i: any) => 
 					<div className="deckCard">
-						{(q[i.CardID] != "0") && <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength} />}
+						{(q[i.CardID] != "0") && <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength} type={i.Type}/>}
 						{(q[i.CardID] != "0") &&<h1>x{q[i.CardID]}</h1>}
 					</div>
 				)}</p>

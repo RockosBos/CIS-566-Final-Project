@@ -13,7 +13,6 @@ export default function CardListing(props:any) {
 		cards.push(props.cardID);
 		props.setSelectedCards(cards);
 		setBorderColor("blue");
-		console.log(props.selectedCards);
 	}
 
   return (

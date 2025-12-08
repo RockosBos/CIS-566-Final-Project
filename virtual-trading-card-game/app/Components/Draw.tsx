@@ -104,7 +104,7 @@ export default function Draw(props:any) {
 			<p>Welcome to the draw page</p>
 			<button className='button' onClick={DrawCards}>Draw</button>
 			<div className="Cards">
-				{pulledCards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength}/>)}
+				{pulledCards.map((i: any) => <Card cardID = {i.CardID} name = {i.Name} red = {i.RedStat} blue = {i.BlueStat} green = {i.GreenStat} rarity = {i.Rarity} weakness = {i.Weakness} strength = {i.Strength} type={i.Type}/>)}
 			</div>
 		</div>
 	</>

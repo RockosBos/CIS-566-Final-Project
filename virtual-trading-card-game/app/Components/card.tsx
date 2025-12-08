@@ -38,6 +38,7 @@ export default function Card(props: any){
 				</div>
 				{/* <p>{props.rarity}</p> */}
 				<div className="Effective">
+					<p>Type: {props.type}</p>
 					<p>Weakness: {props.weakness}</p>
 					<p>Strength: {props.strength}</p>
 				</div>

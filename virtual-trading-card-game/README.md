@@ -30,8 +30,8 @@ II. Web Application:
 
 III. Admin CLI
 	1. Install a python version later than 3.10 from https://www.python.org/downloads/
-	2. Navigate to /PythonAdmin
-	3. run 'pip install -r requirements.txt'
+	2. run 'pip install -r requirements.txt'
+	3. Navigate to /PythonAdmin
 	4. run 'python Admin.py' to start the Admin CLI
 	5. You will be prompted with the options of the Admin CLI.
 
